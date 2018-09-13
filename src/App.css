@@ -12,7 +12,7 @@ h1 {
 
 .videos-container {
   width: 90%;
-  overflow:hidden;
+  overflow: hidden;
   margin: 0 auto 30px auto;
   padding-top: 30px;
   border-radius: 8px;
@@ -49,4 +49,22 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+@media only screen and (max-width: 768px) {
+
+  h1 {
+    font-size: 1.7em;
+  }
+  
+  .videos-container {
+    width: 90%;
+  }
+  
+  .each-video {
+    float: none;
+    width: 90%;
+    margin: 0 auto 50px auto;
+  }
+
 }
