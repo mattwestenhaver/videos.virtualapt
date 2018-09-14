@@ -5,7 +5,7 @@ class Home extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>VirtualAPT's 360˚ Videos</h1>
+        <h1>VirtualAPT's Digital Experiences</h1>
         <Videos />
       </div>
     )
