@@ -17,14 +17,19 @@
 
 h1 {
   margin: 0;
-  padding: 0 0 30px 0;
+  padding: 0;
   color: black;
   font-family: 'Roboto', sans-serif;
   font-size: 2.2em;
 }
 
-h4 {
+h3 {
   margin-top: 10px;
+  color: rgb(36, 76, 129);
+}
+
+h4 {
+  margin-top: 5px!important;
   font-family: 'Noto Sans', sans-serif;
 }
 
@@ -62,20 +67,74 @@ h4 {
           box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.65);
 }
 
-a {
+.form-wrap {
+  width: 50%;
+  margin: 40px auto;
+  background-color: rgb(223, 223, 223);
+  padding: 15px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 0px 35px 1px rgba(0,0,0,0.65);
+     -moz-box-shadow: 0px 0px 35px 1px rgba(0,0,0,0.65);
+          box-shadow: 0px 0px 35px 1px rgba(0,0,0,0.65);
+}
+
+.ui.form input:not([type]), .ui.form input {
+  margin-bottom: 10px!important;
+}
+
+h4 a {
   color: black;
   text-decoration: none;
 }
 
-a:hover {
+h4>a:hover {
+  color: black;
   text-decoration: underline;
+}
+
+.filter {
+  text-align: right;
+  margin: 0 40px 15px 0;
+}
+
+.filter>.ui.button {
+  background: transparent;
+  padding: 2px 5px;
+  margin-left: .25em;
+}
+
+.filter>.ui.button:hover {
+  background: transparent;
+  text-decoration: underline;
+}
+
+.filter>.ui.button:active {
+  background: transparent;
+  text-decoration: underline;
+}
+
+.new-video h3{
+  margin: 0 auto 15px auto!important;
+}
+
+.calendar-container {
+  width: fit-content;
+  margin: 15px auto;
+}
+
+.calendar-container h3 {
+  color: black;
+}
+
+.calendar-container button {
+  font-family: 'Noto Sans', sans-serif!important;
 }
 
 @media only screen and (max-width: 768px) {
 
   .logo-container {
     width: 25%;
-    margin: 20px 0 -30px 0;
+    margin: 20px 0 0 0;
   }
   
   .logo-container img {
