@@ -3,6 +3,9 @@ import { Button, Form } from 'semantic-ui-react'
 import auth from '../../auth.js'
 import Calendar from 'react-calendar';
 import { Redirect } from 'react-router-dom'
+import { toast, ToastContainer } from 'react-toastify'
+
+import 'react-toastify/dist/ReactToastify.css';
 
 class New extends React.Component {
 
@@ -28,22 +31,36 @@ class New extends React.Component {
     }
     auth.createVideo(videoData).then(success => {
       if(success) {
-        console.log('video created successfully')
+        toast.success('Video successfully posted', {
+          position: toast.POSITION.TOP_CENTER,
+          autoClose: 3000
+        })
         setTimeout(() => {
           this.setState({ redirect: true })
-        }, 5000)
+        }, 3000)
       } else {
-        console.log('error while saving')
+        toast.error('Please fill out all the fields and try again', {
+          position: toast.POSITION.TOP_CENTER
+        })
       }
     })
   }
 
   logIn() {
     if(this.refs.password.value === process.env.REACT_APP_VAR_PASSWORD) {
-      this.setState({ loggedIn: true })
       this.refs.password.value = ""
+      toast.success('Login Successful', {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 2000
+      })
+      setTimeout(() => {
+        this.setState({ loggedIn: true })
+      }, 2000)
     } else {
-      console.log('Incorrect Password')
+      this.refs.password.value = ""
+      toast.error('Incorrect Password. Please try again.', {
+        position: toast.POSITION.TOP_CENTER
+      })
     }
   }
 
@@ -53,7 +70,7 @@ class New extends React.Component {
       ? <Redirect to='/' />
       : this.state.loggedIn
         ? <div className="form-wrap">
-            <h1>Post New Video</h1>
+            <h2>Post New Video</h2>
             <div>
               <Form onSubmit={this.handleFormSubmit.bind(this)}>
                 <input placeholder='Video Title' ref='title' />
@@ -67,15 +84,17 @@ class New extends React.Component {
                   />
                 </div>
                 <Button color='blue'>Submit</Button>
+                <ToastContainer />
               </Form>
             </div>
           </div>
-        : <div className="form-wrap">
+        : <div className="login-wrap">
             <h1>Log In</h1>
             <div>
               <Form onSubmit={this.logIn.bind(this)}>
                 <input type='password' placeholder='Password' ref='password' />
                 <Button color='blue'>Submit</Button>
+                <ToastContainer />
               </Form>
             </div>
           </div>

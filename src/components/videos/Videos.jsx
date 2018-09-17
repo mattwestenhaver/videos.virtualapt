@@ -79,7 +79,7 @@ class Videos extends React.Component {
                     <div className="each-video" key={index}>
                       {video.thumbnail
                         ? <a href={video.url} target="_blank"><img src={video.thumbnail} alt={video.title} /></a>
-                        : <img src={noThumbnail} alt='no thumbnail available' />
+                        : <a href={video.url} target="_blank"><img src={noThumbnail} alt='no thumbnail available' /></a>
                       }
                       <h4><a href={video.url} target="_blank">{video.title}</a></h4>
                     </div>
