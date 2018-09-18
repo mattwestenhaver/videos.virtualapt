@@ -36,7 +36,6 @@ class Videos extends React.Component {
   render() {
     return (
       <div>
-        <Link to='/new' className='new-video'><h3>Post Video</h3></Link>
         <div className="videos-container">
           <div className="filter">
             <Button onClick={this.nameFilter.bind(this)}>Name</Button> | <Button onClick={this.dateFilter.bind(this)}>Upload Date</Button>
@@ -88,6 +87,15 @@ class Videos extends React.Component {
               }
           </div>
         </div>
+        <ul>
+          <li>
+            <Link to='/new' className='new-video'><h3>Add</h3></Link>
+          </li>
+          <li> | </li>
+          <li>
+            <Link to='/edit' className='edit-video'><h3>Edit</h3></Link>
+          </li>
+        </ul>
       </div>
     )
   }

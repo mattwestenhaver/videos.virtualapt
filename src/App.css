@@ -36,7 +36,7 @@ h4 {
 .videos-container {
   width: 90%;
   overflow: hidden;
-  margin: 0 auto 30px auto;
+  margin: 30px auto 30px auto;
   padding-top: 30px;
   border-radius: 8px;
   background-color: whitesmoke;
@@ -124,8 +124,13 @@ h4>a:hover {
   text-decoration: underline;
 }
 
-.new-video h3{
-  margin: 0 auto 15px auto!important;
+ul {
+  padding-left: 0;
+}
+
+li {
+  display: inline-block;
+  margin-right: 10px;
 }
 
 .calendar-container {

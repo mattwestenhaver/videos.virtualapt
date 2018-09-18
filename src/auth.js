@@ -14,13 +14,24 @@ class AuthClient {
   }
 
   getVideos() {
-    return this.request({method: 'Get', url: "/videos"})
+    return this.request({ method: 'Get', url: "/videos" })
       .then(response => response.data.videos)
   }
 
   createVideo(videoInfo) {
-    return this.request({method: 'Post', url: "/videos", data: videoInfo})
+    return this.request({ method: 'Post', url: "/videos", data: videoInfo })
       .then(response => response.data.success)
+  }
+
+  updateVideo(videoInfo) {
+    return this.request({ method: 'Patch', url: `/videos/${videoInfo._id}`, data: videoInfo })
+    .then(response => {
+      if(response.data.success) {
+        return true
+      } else {
+        return false
+      }
+    })
   }
  
 }

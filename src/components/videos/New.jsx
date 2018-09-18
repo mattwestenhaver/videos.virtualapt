@@ -89,7 +89,7 @@ class New extends React.Component {
             </div>
           </div>
         : <div className="login-wrap">
-            <h1>Log In</h1>
+            <h1>Login to Post</h1>
             <div>
               <Form onSubmit={this.logIn.bind(this)}>
                 <input type='password' placeholder='Password' ref='password' />

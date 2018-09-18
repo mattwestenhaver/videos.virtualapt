@@ -4,6 +4,7 @@ import './App.css';
 
 import Videos from './components/videos/Videos.jsx'
 import New from './components/videos/New.jsx'
+import Edit from './components/videos/Edit.jsx'
 import logo from './images/logo-vapt-small.png'
 
 class App extends Component {
@@ -18,6 +19,7 @@ class App extends Component {
             <h1>VirtualAPT's Digital Experiences</h1>
             <Route exact path='/' component={Videos} />
             <Route path='/new' component={New} />
+            <Route path='/edit' component={Edit} />
           </div>
         </div>
       </Router>  
