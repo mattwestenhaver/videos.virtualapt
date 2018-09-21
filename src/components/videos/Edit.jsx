@@ -116,7 +116,7 @@ class Edit extends React.Component {
   render() {
     return(
       this.state.redirect
-      ? <Redirect to='/' />
+      ? <Redirect to='/home' />
       : this.state.loggedIn
         ? <div className="form-wrap">
             <h2>Edit Video</h2>

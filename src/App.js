@@ -13,13 +13,13 @@ class App extends Component {
       <Router>
         <div className="App">
           <div className="logo-container">
-            <Link to='/'><img src={logo} alt='virtualapt_logo' className='home-logo' /></Link>
+            <Link to='/home'><img src={logo} alt='virtualapt_logo' className='home-logo' /></Link>
           </div>
           <div>
             <h1>VirtualAPT's Digital Experiences</h1>
-            <Route exact path='/' component={Videos} />
-            <Route path='/new' component={New} />
-            <Route path='/edit' component={Edit} />
+            <Route exact path='/home' component={Videos} />
+            <Route path='/home/new' component={New} />
+            <Route path='/home/edit' component={Edit} />
           </div>
         </div>
       </Router>  

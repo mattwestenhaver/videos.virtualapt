@@ -29,21 +29,25 @@ class New extends React.Component {
       thumbnail: this.refs.thumbnail.value,
       uploadDate: this.state.date
     }
-    auth.createVideo(videoData).then(success => {
-      if(success) {
-        toast.success('Video successfully posted', {
-          position: toast.POSITION.TOP_CENTER,
-          autoClose: 3000
-        })
-        setTimeout(() => {
-          this.setState({ redirect: true })
-        }, 3000)
-      } else {
-        toast.error('Please fill out all the fields and try again', {
-          position: toast.POSITION.TOP_CENTER
-        })
-      }
-    })
+    auth.createVideo(videoData)
+      .then(success => {
+        if(success) {
+          toast.success('Video successfully posted', {
+            position: toast.POSITION.TOP_CENTER,
+            autoClose: 3000
+          })
+          setTimeout(() => {
+            this.setState({ redirect: true })
+          }, 3000)
+        } else {
+          toast.error('Please fill out all the fields and try again', {
+            position: toast.POSITION.TOP_CENTER
+          })
+        }
+      })
+      .catch(error => {
+        console.log(error.response)
+      })
   }
 
   logIn() {
@@ -67,7 +71,7 @@ class New extends React.Component {
   render() {
     return (
       this.state.redirect
-      ? <Redirect to='/' />
+      ? <Redirect to='/home' />
       : this.state.loggedIn
         ? <div className="form-wrap">
             <h2>Post New Video</h2>

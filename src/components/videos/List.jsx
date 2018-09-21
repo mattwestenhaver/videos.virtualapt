@@ -122,6 +122,11 @@ const videos = [
     thumbnail: "https://videos.virtualapt.com/thumbnails/lucy.png"
   },
   {
+    title: "",
+    link: "",
+    thumbnail: ""
+  },
+  {
     title: "Michele Varian",
     link: "https://videos.virtualapt.com/mv/",
     thumbnail: "https://videos.virtualapt.com/thumbnails/mv.png"
