@@ -149,6 +149,11 @@ li {
 
 @media only screen and (max-width: 768px) {
 
+  .filter {
+    text-align: center;
+    margin: 0 0 15px 5px;
+  }
+
   .logo-container {
     width: 25%;
     margin: 20px 0 0 0;

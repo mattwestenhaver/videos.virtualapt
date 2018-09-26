@@ -91,7 +91,7 @@ class Videos extends React.Component {
             }
           </div>
         </div>
-        <ul>
+        {/* <ul>
           <li>
             <Link to='/home/new' className='new-video'><h3>Add</h3></Link>
           </li>
@@ -99,7 +99,7 @@ class Videos extends React.Component {
           <li>
             <Link to='/home/edit' className='edit-video'><h3>Edit</h3></Link>
           </li>
-        </ul>
+        </ul> */}
       </div>
     )
   }
