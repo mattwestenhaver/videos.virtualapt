@@ -12,11 +12,8 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <div className="logo-container">
-            <Link to='/home'><img src={logo} alt='virtualapt_logo' className='home-logo' /></Link>
-          </div>
           <div>
-            <h1>VirtualAPT's Digital Experiences</h1>
+            <h1 className='app-header'>VirtualAPT's Digital Experiences</h1>
             <Route exact path='/home' component={Videos} />
             <Route path='/home/new' component={New} />
             <Route path='/home/edit' component={Edit} />
