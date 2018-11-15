@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from 'semantic-ui-react'
-import noThumbnail from '../../images/coming-soon.jpg'
 import auth from '../../auth.js'
+import EachVideo from './EachVideo.jsx'
 
 class Videos extends React.Component {
 
@@ -33,6 +33,7 @@ class Videos extends React.Component {
   componentDidMount() {
     this.loadVideos()
   }
+
   render() {
     return (
       <div>
@@ -54,15 +55,7 @@ class Videos extends React.Component {
                       return 0
                     }
                   }).map((video, index) => {
-                    return (
-                      <div className="each-video" key={index}>
-                        {video.thumbnail
-                          ? <a href={video.url} target="_blank"><img src={video.thumbnail} alt={video.title} /></a>
-                          : <img src={noThumbnail} alt='no thumbnail available' />
-                        }
-                        <h4><a href={video.url} target="_blank">{video.title}</a></h4>
-                      </div>
-                    )
+                    return <EachVideo video={video} index={index} />
                   })
                 : this.state.videos.sort((a,b) => {
                     var videoA = a.uploadDate
@@ -75,15 +68,7 @@ class Videos extends React.Component {
                       return 0
                     }
                   }).map((video, index) => {
-                    return (
-                      <div className="each-video" key={index}>
-                        {video.thumbnail
-                          ? <a href={video.url} target="_blank"><img src={video.thumbnail} alt={video.title} /></a>
-                          : <a href={video.url} target="_blank"><img src={noThumbnail} alt='no thumbnail available' /></a>
-                        }
-                        <h4><a href={video.url} target="_blank">{video.title}</a></h4>
-                      </div>
-                    )
+                    return <EachVideo video={video} index={index} />
                   })
               : <div>
                   <h2>Loading Videos...</h2><br />
@@ -92,13 +77,9 @@ class Videos extends React.Component {
           </div>
         </div>
         {/* <ul>
-          <li>
-            <Link to='/home/new' className='new-video'><h3>Add</h3></Link>
-          </li>
+          <li><Link to='/home/new' className='new-video'><h3>Add</h3></Link></li>
           <li> | </li>
-          <li>
-            <Link to='/home/edit' className='edit-video'><h3>Edit</h3></Link>
-          </li>
+          <li><Link to='/home/edit' className='edit-video'><h3>Edit</h3></Link></li>
         </ul> */}
       </div>
     )
